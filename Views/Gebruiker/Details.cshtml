@@ -1,0 +1,18 @@
+﻿@model ProjectSmartphoneShop.ViewModels.GebruikerDetailsViewModel
+
+@{ 
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Naam</h1>
+
+<p>
+    Id: @Model.Id
+</p>
+<p>
+    Usernam: @Model.UserName
+</p>
+<p>
+    Geboortedatum: @Model.GeboorteDatum
+</p>
+@Html.ActionLink("Terug","Index","Gebruiker")

@@ -1,0 +1,50 @@
+﻿@model ProjectSmartphoneShop.ViewModels.WinkelMandSmartphoneListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Winkelmandje</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Smartphone.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Smartphone.Merk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Smartphone.Prijs)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (WinkelMandSmartphone smartphone in Model.winkelMandSmartphones)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => smartphone.Smartphone.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => smartphone.Smartphone.Merk)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => smartphone.Smartphone.Prijs)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@smartphone.WinkelMand.WinkelMandId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@smartphone.WinkelMand.WinkelMandId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@smartphone.WinkelMand.WinkelMandId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

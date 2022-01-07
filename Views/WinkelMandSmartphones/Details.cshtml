@@ -1,0 +1,30 @@
+﻿@model ProjectSmartphoneShop.Models.WinkelMandSmartphone
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>WinkelMandSmartphone</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WinkelMand)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WinkelMand.WinkelMandId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Smartphone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Smartphone.SmartphoneId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.WinkelMandSmartphoneId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

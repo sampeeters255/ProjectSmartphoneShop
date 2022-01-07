@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ProjectSmartphoneShop.Models.Smartphone>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container-fluid padding">
+    <div class="row">
+        @foreach (var smartphone in Model)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="@("~/image/"+smartphone.ImageName)" asp-append-version="true" width="100" height="250" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">@smartphone.Merk @smartphone.Model</h5>
+                        <p class="card-text">@smartphone.Prijs €</p>
+                        <a asp-action="Edit" asp-route-id="@smartphone.SmartphoneId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@smartphone.SmartphoneId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@smartphone.SmartphoneId">Delete</a>
+                    </div>
+                </div>
+
+            </div>
+
+        }
+    </div>
+</div>
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Merk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Merk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SmartphoneId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SmartphoneId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SmartphoneId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@

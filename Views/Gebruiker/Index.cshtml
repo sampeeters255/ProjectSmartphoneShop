@@ -1,0 +1,47 @@
+﻿@model ProjectSmartphoneShop.ViewModels.GebruikerListViewModel
+@{ 
+    ViewData["Title"] = "Index";
+}
+
+<h2>Gebruikers</h2>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th class="col-md-4">
+                @Html.DisplayNameFor(v => v.Gebruikers[0].Id)
+            </th>
+            <th class="col-md-4">
+                @Html.DisplayNameFor(v => v.Gebruikers[0].Naam)
+            </th>
+            <th class="col-md-4">
+                @Html.DisplayNameFor(v => v.Gebruikers[0].GeboorteDatum)
+            </th>
+            <th class="col-md-2">
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gebruiker in Model.Gebruikers)
+        {
+        <tr>
+            <td class="col-md-4">
+                @Html.DisplayNameFor(modelItem => gebruiker.Id)
+            </td>
+            <td class="col-md-4">
+                @Html.DisplayNameFor(modelItem => gebruiker.Naam)
+            </td>
+            <td class="col-md-4">
+                @Html.DisplayNameFor(modelItem => gebruiker.GeboorteDatum)
+            </td>
+            <td class="col-md-2">
+                <a asp-action="Details" asp-route-id="@gebruiker.Id">Details</a>
+                <a asp-action="Delete" asp-route-id="@gebruiker.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
